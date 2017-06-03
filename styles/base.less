@@ -54,6 +54,12 @@ atom-text-editor {
 
 // Syntax styles
 
+.syntax--pug {
+  &.syntax--tag {
+    color: @water-blue;
+  }
+}
+
 .syntax--comment {
   color: @plain-mouse;
   font-style: italic;
@@ -61,6 +67,14 @@ atom-text-editor {
 
 .syntax--other {
   color: @water-blue;
+}
+
+.syntax--todo {
+  color: @pure-crimson!important;
+}
+
+.syntax--assignment {
+  color: @vine-grape;
 }
 
 .syntax--object {
@@ -250,7 +264,7 @@ atom-text-editor {
     }
 
     &.syntax--id {
-      color: @blue;
+      color: @water-blue;
     }
   }
 }
@@ -273,7 +287,7 @@ atom-text-editor {
   }
 
   &.syntax--separator {
-    background-color: @gray;
+    background-color: @brown-rat;
     color: @syntax-text-color;
   }
 }
