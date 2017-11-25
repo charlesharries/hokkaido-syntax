@@ -2,10 +2,14 @@
   "name": "hokkaido-syntax",
   "theme": "syntax",
   "version": "0.1.0",
-  "description": "A short description of your syntax theme",
+  "description": "Syntax theme inspired by the colors of Hokkaido, Japan",
   "keywords": [
     "syntax",
-    "theme"
+    "theme",
+    "Japan",
+    "Hokkaido",
+    "red",
+    "simple"
   ],
   "repository": "https://github.com/charlesharries/hokkaido-syntax",
   "license": "MIT",
