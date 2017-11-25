@@ -54,23 +54,44 @@ atom-text-editor {
 
 // Syntax styles
 
+.syntax--php.syntax--modifier {
+  color: @dark-forest;
+}
+
+.syntax--php.syntax--extends {
+  color: @peach;
+}
+
+.syntax--tag {
+  color: @dark-forest;
+}
+
 .syntax--pug {
   &.syntax--tag {
-    color: @water-blue;
+    color: @dark-forest;
   }
 }
 
 .syntax--comment {
-  color: @plain-mouse;
+  color: @comment-blue;
+  font-style: italic;
+}
+
+.syntax--boolean,
+.syntax--true,
+.syntax--false,
+.syntax--null {
+  color: @vine-grape!important;
   font-style: italic;
 }
 
 .syntax--other {
-  color: @water-blue;
+  color: @syntax-text-color;
 }
 
 .syntax--todo {
   color: @pure-crimson!important;
+  font-weight: 700;
 }
 
 .syntax--assignment {
@@ -78,17 +99,15 @@ atom-text-editor {
 }
 
 .syntax--object {
-  color: @buddhist-saffron;
+  color: @syntax-text-color;
 }
 
-.syntax--quoted .syntax--embedded {
-  color: @pure-crimson;
-  &.syntax--variable {
-    color: @pure-crimson;
-  }
-  &.syntax--delimiter {
-    color: @pure-crimson;
-  }
+.syntax--tag .syntax--tag {
+  color: @dark-forest;
+}
+
+.syntax--doctype {
+  color: @peach!important;
 }
 
 .syntax--delimiter {
@@ -96,14 +115,17 @@ atom-text-editor {
 }
 
 .syntax--keyword {
-  color: @medium-crimson;
+  color: @peach;
 
   &.syntax--control {
     color: @peach;
   }
 
   &.syntax--operator {
-    color: @syntax-text-color;
+    color: @buddhist-saffron;
+    &.syntax--ternary {
+      color: @peach;
+    }
   }
 
   &.syntax--other.syntax--special-method {
@@ -120,18 +142,18 @@ atom-text-editor {
 }
 
 .syntax--property {
-  color: @cherry-blossom;
+  color: @dim-silk;
 }
 
 .syntax--instance {
-  color: @medium-crimson;
+  color: @vine-grape;
 }
 
 .syntax--constant {
-  color: @buddhist-saffron;
+  color: @syntax-text-color;
 
   &.syntax--character.syntax--escape {
-    color: @water-blue;
+    color: @dark-forest;
   }
 
   &.syntax--numeric {
@@ -139,7 +161,7 @@ atom-text-editor {
   }
 
   &.syntax--other.syntax--color {
-    color: @water-blue;
+    color: @dark-forest;
   }
 
   &.syntax--other.syntax--symbol {
@@ -158,7 +180,8 @@ atom-text-editor {
   }
 
   &.syntax--parameter.syntax--function {
-    color: @syntax-text-color;
+    color: @dim-silk;
+    font-style: italic;
   }
 }
 
@@ -168,11 +191,15 @@ atom-text-editor {
 }
 
 .syntax--string {
-  color: @sky-blue;
+  color: @willow-dye!important;
 
 
   &.syntax--regexp {
-    color: @water-blue;
+    color: @dark-forest;
+
+    & * {
+      color: @dark-forest;
+    }
 
     .syntax--source.syntax--ruby.syntax--embedded {
       color: @willow-dye;
@@ -180,26 +207,26 @@ atom-text-editor {
   }
 
   &.syntax--other.syntax--link {
-    color: @medium-crimson;
+    color: @peach;
   }
 }
 
 .syntax--punctuation {
   &.syntax--definition {
     &.syntax--comment {
-      color: @plain-mouse;
+      color: @comment-blue;
     }
 
     &.syntax--string,
     &.syntax--variable,
     &.syntax--parameters,
     &.syntax--array {
-      //color: @syntax-text-color;
+      // color: @syntax-text-color;
     }
 
     &.syntax--heading,
     &.syntax--identity {
-      color: @sky-blue;
+      color: @willow-dye;
     }
 
     &.syntax--bold {
@@ -213,65 +240,66 @@ atom-text-editor {
     }
   }
 
-  &.syntax--section.syntax--embedded {
-    color: darken(@pure-crimson, 10%);
-  }
-
 }
 
 .syntax--support {
   &.syntax--class {
-    color: @buddhist-saffron;
+    color: @syntax-text-color;
+    font-style: italic;
   }
 
   &.syntax--function  {
-    color: @water-blue;
+    color: @dim-silk;
 
     &.syntax--any-method {
-      color: @water-blue;
+      color: @syntax-text-color;
     }
   }
 }
 
 .syntax--entity {
   &.syntax--name.syntax--function {
-    color: @water-blue;
+    color: @dim-silk;
   }
   &.syntax--name.syntax--type {
-    color: @buddhist-saffron;
+    color: @syntax-text-color;
     font-weight: bold;
+    font-style: italic;
   }
 
   &.syntax--other.syntax--inherited-class {
-    color: @willow-dye;
+    color: @syntax-text-color;
+    font-style: italic;
+    font-weight: 700;
   }
   &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
-    color: @buddhist-saffron;
+    color: @syntax-text-color;
+    font-style: italic;
   }
 
   &.syntax--name.syntax--section {
-    color: @sky-blue;
+    color: @willow-dye;
   }
 
   &.syntax--name.syntax--tag {
-    color: @water-blue;
+    color: @dark-forest;
   }
 
   &.syntax--other.syntax--attribute-name {
     color: @buddhist-saffron;
     &.syntax--parent-selector {
-      color: @water-blue;
+      color: @dark-forest;
     }
 
     &.syntax--id {
-      color: @water-blue;
+      color: @dark-forest;
     }
   }
 }
 
 .syntax--meta {
   &.syntax--class {
-    color: @cherry-blossom;
+    color: @peach;
   }
 
   &.syntax--link {
@@ -279,7 +307,7 @@ atom-text-editor {
   }
 
   &.syntax--require {
-    color: @water-blue;
+    color: @dark-forest;
   }
 
   &.syntax--selector {
@@ -307,7 +335,7 @@ atom-text-editor {
   }
 
   &.syntax--deleted {
-    color: @medium-crimson;
+    color: @vine-grape;
   }
 
   &.syntax--italic {
@@ -316,7 +344,7 @@ atom-text-editor {
   }
 
   &.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
-    color: @sky-blue;
+    color: @willow-dye;
   }
 
   &.syntax--inserted {
@@ -324,7 +352,7 @@ atom-text-editor {
   }
 
   &.syntax--list {
-    color: @pure-crimson;
+    color: @peach;
   }
 
   &.syntax--quote {
